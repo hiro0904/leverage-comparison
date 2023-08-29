@@ -42,7 +42,10 @@ closing_prices = data["Close"]
 # st.line_chart(closing_prices)
 
 # レバレッジ比率の設定
-leverageRatio = 3
+leverageRatio = st.number_input(
+    "レバレッジ比率を入力して下さい(1 to 20)", value=3, min_value=1, max_value=20,
+)
+
 
 # 初めの値を調整して配列にする
 adjusted_prices = (closing_prices / closing_prices.iloc[0]) * 10000
